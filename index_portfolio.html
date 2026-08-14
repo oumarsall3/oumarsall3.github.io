@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oumar SALL, technopédagogue, ingénierie pédagogique et FOAD</title>
+<meta name="description" content="Oumar SALL, technopédagogue et ingénieur pédagogique. Conception de dispositifs de formation hybrides et à distance, médiatisation de référentiels, accompagnement des enseignants au numérique. Réalisations en libre accès et publications scientifiques.">
+<meta name="author" content="Oumar SALL">
+<link rel="canonical" href="https://oumarsall3.github.io/">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Oumar SALL, technopédagogue, ingénierie pédagogique et FOAD">
+<meta property="og:description" content="Conception de dispositifs de formation hybrides et à distance, médiatisation de référentiels, accompagnement des enseignants au numérique.">
+<meta property="og:url" content="https://oumarsall3.github.io/">
+
+<style>
+:root {
+  --encre: #12253F;
+  --encre-douce: #3D4F68;
+  --nuit: #0E1D33;
+  --ocre: #8A5518;
+  --ocre-clair-sur-nuit: #D69A52;
+  --creme: #F5EBDD;
+  --papier: #FBF9F5;
+  --papier2: #F2EFE9;
+  --trait: #DDD6CA;
+  --sarcelle: #1F6F6B;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--papier);
+  color: var(--encre);
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  font-size: 17px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sans {
+  font-family: "Segoe UI", -apple-system, Roboto, Helvetica, Arial, sans-serif;
+}
+
+.cadre { max-width: 780px; margin: 0 auto; padding: 0 22px; }
+
+a { color: var(--ocre); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--encre); }
+a:focus-visible { outline: 3px solid var(--sarcelle); outline-offset: 2px; border-radius: 2px; }
+
+/* ---------- Bandeau ---------- */
+
+header.tete {
+  background: var(--nuit);
+  color: var(--papier);
+  padding: 56px 0 48px;
+}
+header.tete .surtitre {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 12.5px; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ocre-clair-sur-nuit);
+  margin: 0 0 14px;
+}
+header.tete h1 {
+  font-size: clamp(30px, 6vw, 46px);
+  line-height: 1.1;
+  margin: 0 0 6px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+header.tete .role {
+  font-size: clamp(17px, 2.6vw, 21px);
+  margin: 0 0 22px;
+  color: #D9E1EC;
+}
+header.tete .accroche {
+  font-size: 17px;
+  max-width: 56ch;
+  margin: 0 0 26px;
+  color: #E8EDF4;
+}
+.liens { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.liens a {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 14px;
+  color: var(--papier);
+  text-decoration: none;
+  border: 1px solid rgba(251,249,245,.4);
+  border-radius: 22px;
+  padding: 7px 15px;
+  display: inline-block;
+}
+.liens a:hover { background: var(--papier); color: var(--nuit); }
+
+/* ---------- Sections ---------- */
+
+main { padding: 0 0 40px; }
+
+section { padding: 46px 0 6px; }
+section + section { border-top: 1px solid var(--trait); }
+
+h2 {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ocre);
+  margin: 0 0 22px;
+  font-weight: 700;
+}
+
+h3 { font-size: 20px; margin: 0 0 6px; line-height: 1.3; font-weight: 600; }
+
+p { margin: 0 0 16px; }
+.chapo { font-size: 19px; }
+
+/* ---------- Réalisations ---------- */
+
+.travaux { display: flex; flex-wrap: wrap; gap: 16px; }
+
+.travail {
+  background: #FFFFFF;
+  border: 1px solid var(--trait);
+  border-radius: 10px;
+  padding: 20px 22px;
+  display: flex; flex-direction: column;
+  flex: 1 1 300px;
+  min-width: 0;
+}
+.travail h3 { font-size: 18.5px; }
+.travail p { font-size: 15.5px; color: var(--encre-douce); margin-bottom: 14px; flex: 1; }
+.etiquettes { list-style: none; padding: 0; margin: 0 0 14px; display: flex; flex-wrap: wrap; gap: 6px; }
+.etiquettes li {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 11.5px; letter-spacing: 0.03em;
+  background: var(--creme); color: var(--encre);
+  border-radius: 4px; padding: 3px 9px;
+}
+.travail .aller {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 14px; font-weight: 600; text-decoration: none;
+  color: var(--sarcelle);
+}
+.travail .aller:hover { text-decoration: underline; }
+
+/* ---------- Chiffres ---------- */
+
+.chiffres {
+  background: var(--papier2);
+  border-left: 4px solid var(--ocre);
+  border-radius: 0 8px 8px 0;
+  padding: 20px 24px;
+  margin: 0 0 4px;
+}
+.chiffres dl {
+  margin: 0; display: flex; flex-wrap: wrap; gap: 16px 30px;
+}
+.chiffres dl > div { flex: 1 1 112px; min-width: 0; }
+.chiffres dt {
+  font-size: 28px; font-weight: 700; line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.chiffres dd {
+  margin: 4px 0 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 13px; color: var(--encre-douce); line-height: 1.35;
+}
+.chiffres .source {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 12.5px; color: var(--encre-douce); margin: 16px 0 0;
+}
+
+/* ---------- Publications ---------- */
+
+.publication {
+  border-left: 3px solid var(--trait);
+  padding: 2px 0 2px 18px;
+  margin: 0 0 22px;
+}
+.publication .titre { font-weight: 600; display: block; margin-bottom: 3px; }
+.publication .refs {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 14.5px; color: var(--encre-douce);
+}
+
+/* ---------- Parcours ---------- */
+
+.parcours { list-style: none; padding: 0; margin: 0; }
+.parcours li {
+  display: flex; flex-wrap: wrap; gap: 2px 20px; padding: 13px 0;
+  border-bottom: 1px solid var(--trait);
+}
+.parcours li > span:last-child { flex: 1 1 300px; min-width: 0; }
+.parcours .periode {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 13.5px; color: var(--encre-douce);
+  font-variant-numeric: tabular-nums; padding-top: 3px;
+  flex: 0 0 110px;
+}
+.parcours .poste { font-weight: 600; }
+.parcours .lieu { font-size: 15.5px; color: var(--encre-douce); }
+
+/* ---------- Pied ---------- */
+
+footer {
+  background: var(--nuit); color: #D9E1EC;
+  padding: 34px 0 40px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 14.5px;
+}
+footer a { color: var(--ocre-clair-sur-nuit); }
+footer a:hover { color: var(--papier); }
+footer p { margin: 0 0 10px; }
+
+@media (max-width: 480px) {
+  body { font-size: 16.5px; }
+  header.tete { padding: 40px 0 34px; }
+  section { padding: 34px 0 4px; }
+}
+</style>
+</head>
+<body>
+
+<header class="tete">
+  <div class="cadre">
+    <p class="surtitre">Technopédagogie &#183; Ingénierie pédagogique</p>
+    <h1>Oumar SALL</h1>
+    <p class="role">Technopédagogue, ingénieur pédagogique et doctorant en sciences de l'éducation</p>
+    <p class="accroche">
+      Je conçois des dispositifs de formation hybrides et à distance pour l'enseignement
+      professionnel et technique, et j'accompagne les équipes enseignantes dans
+      l'appropriation des usages numériques. Mes travaux portent sur les conditions
+      réelles de cette appropriation, là où les prescriptions rencontrent le terrain.
+    </p>
+    <ul class="liens">
+      <li><a href="mailto:salloumar2005@yahoo.fr">Écrire un message</a></li>
+      <li><a href="https://www.linkedin.com/in/salloumar/">LinkedIn</a></li>
+      <li><a href="https://orcid.org/0009-0007-1605-4854">ORCID</a></li>
+      <li><a href="https://github.com/oumarsall3">GitHub</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+
+  <section id="travaux">
+    <div class="cadre">
+      <h2>Réalisations en libre accès</h2>
+      <p class="chapo">
+        Quatre productions issues de mon travail de terrain, publiées sous licence ouverte.
+        Elles ne diffusent aucun contenu de formation : ce sont des méthodes, des gabarits
+        et des outils, transposables à d'autres établissements et à d'autres filières.
+      </p>
+
+      <div class="travaux">
+
+        <article class="travail">
+          <h3>Kit d'atelier de production</h3>
+          <p>
+            Le dispositif complet d'un atelier de six jours au terme duquel des modules
+            entiers sont médiatisés et publiés : cadrage, déroulé, conventions de
+            structuration, contrôle qualité, livrables de clôture.
+          </p>
+          <ul class="etiquettes">
+            <li>Méthodologie</li><li>Approche par compétences</li><li>CC BY-SA</li>
+          </ul>
+          <a class="aller" href="https://github.com/oumarsall3/kit-atelier-production-ren">Consulter le kit</a>
+        </article>
+
+        <article class="travail">
+          <h3>Simulateur SCORM pour Moodle</h3>
+          <p>
+            Un gabarit de simulateur qui tire des valeurs différentes à chaque tentative,
+            remonte sa note au carnet et renvoie à l'apprenant un bilan sur sa manière
+            de faire, et non sur son seul résultat.
+          </p>
+          <ul class="etiquettes">
+            <li>SCORM 1.2</li><li>Sans dépendance</li><li>MIT</li>
+          </ul>
+          <a class="aller" href="https://github.com/oumarsall3/simulateur-scorm-moodle">Voir le gabarit</a>
+        </article>
+
+        <article class="travail">
+          <h3>Scénarios sonorisés hors ligne</h3>
+          <p>
+            Une chaîne de production de scénarios à embranchements, sonorisés par la
+            synthèse vocale du poste. Sans service en ligne, sans coût récurrent, et
+            utilisable là où la connexion est intermittente.
+          </p>
+          <ul class="etiquettes">
+            <li>Synthèse vocale locale</li><li>Multiplateforme</li><li>MIT</li>
+          </ul>
+          <a class="aller" href="https://github.com/oumarsall3/scenario-sonorise">Voir la chaîne</a>
+        </article>
+
+        <article class="travail">
+          <h3>Composants HTML accessibles</h3>
+          <p>
+            Dix composants à coller dans l'éditeur de cours d'une plateforme Moodle,
+            conformes au niveau AA des WCAG 2.1, conçus pour survivre au filtrage HTML
+            et rester lisibles sur un téléphone.
+          </p>
+          <ul class="etiquettes">
+            <li>Accessibilité</li><li>Moodle</li><li>Contrastes vérifiés</li>
+          </ul>
+          <a class="aller" href="https://oumarsall3.github.io/charte-composants-ejang/">Ouvrir la bibliothèque</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="terrain">
+    <div class="cadre">
+      <h2>Sur le terrain</h2>
+      <p>
+        Entre juin et août 2026, j'ai conduit une campagne de cinq ateliers de production
+        de ressources numériques dans cinq établissements de formation professionnelle,
+        sur cinq filières et quatre niveaux de diplôme.
+      </p>
+
+      <div class="chiffres">
+        <dl>
+          <div><dt>52</dt><dd>modules médiatisés</dd></div>
+          <div><dt>342</dt><dd>leçons publiées</dd></div>
+          <div><dt>290</dt><dd>versions imprimables</dd></div>
+          <div><dt>157</dt><dd>évaluations</dd></div>
+          <div><dt>35</dt><dd>activités interactives</dd></div>
+        </dl>
+        <p class="source">
+          Volumes relevés sur la plateforme au terme de la campagne. Le dernier atelier
+          a traité dix modules en une semaine, là où le premier en avait traité sept :
+          c'est la stabilisation des procédés, plus que l'effort, qui explique l'écart.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="recherche">
+    <div class="cadre">
+      <h2>Recherche</h2>
+      <p class="chapo">
+        Ma thèse porte sur le passage des cellules pédagogiques aux communautés
+        virtuelles de pratique dans l'enseignement technique, et sur les conditions
+        techno-pédagogiques que les politiques éducatives prescrivent sans les spécifier.
+      </p>
+
+      <div class="publication">
+        <span class="titre">Compétences technopédagogiques et adoption des communautés virtuelles de pratique dans la formation professionnelle et technique sénégalaise : une étude par modélisation et classification</span>
+        <span class="refs">
+          SALL, O., FALL, A. A. D., &amp; SECK, M. (2026). <em>Hybrides (RALSH)</em>, 4(7), 118-136.
+          <a href="https://doi.org/10.5281/zenodo.20451842">doi.org/10.5281/zenodo.20451842</a>
+        </span>
+      </div>
+
+      <div class="publication">
+        <span class="titre">L'impact des compétences TPACK sur l'identité professionnelle des enseignants sénégalais : une étude quantitative</span>
+        <span class="refs">
+          SALL, O., SECK, M., &amp; SALL, O. (2025). <em>Hybrides (RALSH)</em>, Spécial 002, 283-300.
+          <a href="https://doi.org/10.5281/zenodo.16967748">doi.org/10.5281/zenodo.16967748</a>
+        </span>
+      </div>
+
+      <p>
+        Cadres mobilisés : TPACK pour les compétences, UTAUT pour l'acceptation des
+        dispositifs, et une lecture systémique des conditions organisationnelles du
+        changement. Publications indexées sur
+        <a href="https://orcid.org/0009-0007-1605-4854">ORCID</a>.
+      </p>
+    </div>
+  </section>
+
+  <section id="parcours">
+    <div class="cadre">
+      <h2>Parcours</h2>
+      <ul class="parcours">
+        <li>
+          <span class="periode">depuis 2026</span>
+          <span>
+            <span class="poste">Technopédagogue</span><br>
+            <span class="lieu">Direction des curricula et des innovations pédagogiques, ministère chargé de la formation professionnelle et technique</span>
+          </span>
+        </li>
+        <li>
+          <span class="periode">2024 &#8211; 2026</span>
+          <span>
+            <span class="poste">Coordonnateur des programmes de formation</span><br>
+            <span class="lieu">Programme FORCE-N, Université numérique Cheikh Hamidou Kane</span>
+          </span>
+        </li>
+        <li>
+          <span class="periode">2020 &#8211; 2024</span>
+          <span>
+            <span class="poste">Chef des travaux</span><br>
+            <span class="lieu">Lycée technique et professionnel</span>
+          </span>
+        </li>
+        <li>
+          <span class="periode">2013 &#8211; 2020</span>
+          <span>
+            <span class="poste">Directeur de centre, puis professeur et coordonnateur de cellule pédagogique</span><br>
+            <span class="lieu">Centre de formation professionnelle, puis lycée technique industriel</span>
+          </span>
+        </li>
+        <li>
+          <span class="periode">2005 &#8211; 2013</span>
+          <span>
+            <span class="poste">Professeur et concepteur de programme</span><br>
+            <span class="lieu">Lycée technique industriel, élaboration du référentiel de BTS électromécanique</span>
+          </span>
+        </li>
+      </ul>
+
+      <p style="margin-top:22px">
+        Formation : doctorat en sciences de l'éducation en cours, master en sciences de
+        l'éducation option technologie de l'éducation, CAESTP et CAEMTP de l'École normale
+        supérieure d'enseignement technique et professionnel. Certifications en tutorat à
+        distance et en recherche en éducation (programme APPRENDRE, AUF).
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="cadre">
+    <p>
+      <a href="mailto:salloumar2005@yahoo.fr">salloumar2005@yahoo.fr</a>
+      &#183; <a href="https://www.linkedin.com/in/salloumar/">LinkedIn</a>
+      &#183; <a href="https://orcid.org/0009-0007-1605-4854">ORCID 0009-0007-1605-4854</a>
+      &#183; <a href="https://github.com/oumarsall3">GitHub</a>
+    </p>
+    <p>Dakar, Sénégal. Page personnelle : les productions présentées ici n'engagent que leur auteur.</p>
+  </div>
+</footer>
+
+</body>
+</html>
