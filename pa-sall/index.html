@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pa SALL — tuteur automatique d'e-jàng</title>
+<meta name="description" content="Pa SALL, le tuteur automatique de la plateforme e-jàng du ministère de la Formation professionnelle du Sénégal. Présentation publique.">
+<style>
+  :root{
+    --bleu:#1F4E79; --bleu-clair:#2E75B5; --bleu-pale:#DEEAF6;
+    --or:#E0A800; --vert:#1E7B34; --vert-pale:#E4F4E8;
+    --encre:#1C2530; --gris:#5A6472; --bord:#D8E2EE; --fond:#F4F7FB; --blanc:#fff;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;color:var(--encre);background:var(--fond);line-height:1.6}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+  a{color:var(--bleu-clair)}
+
+  /* En-tete */
+  header{background:linear-gradient(135deg,var(--bleu),var(--bleu-clair));color:#fff;padding:54px 0 46px}
+  .hero{display:flex;gap:26px;align-items:center;flex-wrap:wrap}
+  .hero-face{width:96px;height:96px;flex:none;background:rgba(255,255,255,.14);border-radius:50%;padding:8px}
+  .hero h1{margin:0 0 6px;font-size:34px;font-weight:800;letter-spacing:.3px}
+  .hero .sous{font-size:18px;opacity:.94;margin:0}
+  .hero .pouce{display:inline-block;margin-top:14px;font-size:13px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.35);padding:4px 13px;border-radius:999px}
+  .hero .badges{margin-top:16px;display:flex;gap:8px;flex-wrap:wrap}
+  .hero .badge{font-size:12.5px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);padding:3px 11px;border-radius:8px}
+
+  /* Sections */
+  section{padding:44px 0}
+  section h2{font-size:24px;color:var(--bleu);margin:0 0 8px}
+  section .intro{color:var(--gris);max-width:70ch;margin:0 0 26px}
+  .alt{background:var(--blanc);border-top:1px solid var(--bord);border-bottom:1px solid var(--bord)}
+
+  /* Grille de cartes */
+  .grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+  .carte{background:var(--blanc);border:1px solid var(--bord);border-radius:14px;padding:18px}
+  .alt .carte{background:var(--fond)}
+  .carte h3{margin:0 0 6px;font-size:16.5px;color:var(--bleu)}
+  .carte p{margin:0;font-size:14.5px;color:var(--encre)}
+  .carte .ico{font-size:22px;display:block;margin-bottom:8px}
+
+  /* Galerie de captures (rendus fideles) */
+  .galerie{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:22px}
+  .capture{background:var(--blanc);border:1px solid var(--bord);border-radius:16px;padding:16px;box-shadow:0 3px 14px rgba(16,32,54,.06)}
+  .capture .legende{font-size:13.5px;color:var(--gris);margin-top:12px;text-align:center}
+
+  /* Mockup du panneau Pa SALL */
+  .panneau{border:1px solid var(--bord);border-radius:14px;overflow:hidden;box-shadow:0 8px 26px rgba(16,32,54,.12);max-width:360px;margin:0 auto;background:#fff}
+  .p-entete{display:flex;align-items:center;gap:10px;padding:10px 12px;background:linear-gradient(135deg,var(--bleu),var(--bleu-clair));color:#fff}
+  .p-avatar{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.15);padding:3px;flex:none}
+  .p-nom{font-size:16px;line-height:1.2}.p-nom strong{font-weight:800;letter-spacing:.3px}
+  .p-sous{font-size:12px;opacity:.85}
+  .p-fermer{margin-left:auto;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.16);color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px}
+  .p-corps{padding:12px;background:#fff;display:flex;flex-direction:column;gap:9px;max-height:none}
+  .bulle{border-radius:12px;padding:10px 12px;font-size:14px;line-height:1.45;max-width:96%}
+  .bot{background:#F2F6FB;border:1px solid #D8E2EE;border-left:3px solid var(--bleu-clair);align-self:flex-start}
+  .apprenant{background:var(--bleu);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+  .bulle p{margin:0 0 6px}.bulle p:last-child{margin:0}
+  .situe{margin-top:8px;padding:6px 8px;background:#FFF7E0;border-left:3px solid var(--or);border-radius:6px;font-size:12.5px}
+  .situe b{font-weight:700}
+  .passage{display:block;margin-top:6px;padding:8px 10px;border:1px solid #C9D4E0;border-left:3px solid var(--vert);border-radius:8px;background:#fff;text-decoration:none;color:inherit}
+  .passage .t{display:block;font-weight:700;font-size:12.5px;color:var(--vert)}
+  .passage .x{display:block;font-size:12px;color:var(--gris);margin-top:2px}
+  .ecouter{display:inline-block;margin-top:8px;border:1px solid var(--bleu-clair);background:#fff;color:var(--bleu);border-radius:999px;padding:3px 12px 3px 24px;font-size:12px;position:relative}
+  .ecouter::before{content:"";position:absolute;left:9px;top:50%;transform:translateY(-50%);border-left:8px solid var(--bleu-clair);border-top:5px solid transparent;border-bottom:5px solid transparent}
+  .puces{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 10px}
+  .puce{border:1px solid #C9D4E0;background:#fff;color:var(--bleu);border-radius:999px;padding:4px 11px;font-size:12px}
+  .avert{margin-top:8px;font-size:11.5px;color:#7A6A2F;background:#FFF7E0;border-radius:6px;padding:5px 8px}
+  .actions{margin-top:8px;display:flex;gap:8px;flex-wrap:wrap}
+  .action{border:none;border-radius:8px;background:var(--bleu-clair);color:#fff;padding:6px 12px;font-size:12.5px}
+  .action.forum{background:var(--vert)}
+  /* Pastille lanceur */
+  .lanceur{display:inline-flex;align-items:center;gap:8px;height:52px;border-radius:999px;padding:5px 18px 5px 6px;background:linear-gradient(135deg,var(--bleu),var(--bleu-clair));color:#fff;box-shadow:0 4px 14px rgba(16,32,54,.35)}
+  .lanceur .m{width:42px;height:42px;background:rgba(255,255,255,.14);border-radius:50%;padding:2px;flex:none}
+  .lanceur b{font-weight:800}
+
+  ul.liste{margin:0;padding-left:20px}
+  ul.liste li{margin:7px 0}
+  .etat{display:inline-flex;align-items:center;gap:8px;background:var(--vert-pale);color:var(--vert);border:1px solid #Bfe3C8;border-radius:999px;padding:5px 14px;font-size:14px;font-weight:600}
+  .pastille{width:9px;height:9px;border-radius:50%;background:var(--vert);display:inline-block}
+  footer{background:var(--encre);color:#cdd6e0;padding:30px 0;font-size:13.5px}
+  footer a{color:#9ec2e8}
+  .note-fine{color:var(--gris);font-size:12.5px;margin-top:14px}
+  @media (max-width:560px){.hero h1{font-size:27px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hero">
+    <span class="hero-face" aria-hidden="true">
+      <svg viewBox="0 0 48 48" width="100%" height="100%">
+        <circle cx="24" cy="26" r="16" fill="#A26B3F"/>
+        <path d="M8 22 Q10 8 24 8 Q38 8 40 22 L37 22 Q36 12 24 12 Q12 12 11 22 Z" fill="#1F4E79"/>
+        <rect x="10" y="20" width="28" height="4" rx="2" fill="#2E75B5"/>
+        <circle cx="18" cy="28" r="4.2" fill="none" stroke="#F2F4F7" stroke-width="1.6"/>
+        <circle cx="30" cy="28" r="4.2" fill="none" stroke="#F2F4F7" stroke-width="1.6"/>
+        <line x1="22.2" y1="28" x2="25.8" y2="28" stroke="#F2F4F7" stroke-width="1.6"/>
+        <circle cx="18" cy="28" r="1.6" fill="#1C2530"/><circle cx="30" cy="28" r="1.6" fill="#1C2530"/>
+        <path d="M14 34 Q24 44 34 34 Q32 42 24 42 Q16 42 14 34 Z" fill="#F2F4F7"/>
+        <path d="M20 36 Q24 38.5 28 36" fill="none" stroke="#1C2530" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+    </span>
+    <div>
+      <h1>Pa SALL</h1>
+      <p class="sous">Le tuteur automatique de la plateforme e-jàng</p>
+      <span class="pouce">Direction des Curricula et de l'Innovation Pédagogique &middot; MEFPT, Sénégal</span>
+      <div class="badges">
+        <span class="badge">Frugal</span>
+        <span class="badge">Hors connexion</span>
+        <span class="badge">Respectueux des examens</span>
+        <span class="badge">Accessible</span>
+        <span class="badge">Sans donnée personnelle</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Qu'est-ce que Pa SALL ?</h2>
+    <p class="intro">Pa SALL est un compagnon d'apprentissage présent sur chaque page d'e-jàng, la plateforme de formation à distance du ministère de la Formation professionnelle et technique. Il répond instantanément aux questions des apprenants et des formateurs, en français, à partir du contenu réel des cours, et il oriente vers le tuteur humain lorsqu'une réponse validée n'existe pas encore. Conçu pour les réalités du terrain sénégalais : téléphones d'entrée de gamme, connexions modestes, et un fort besoin d'autonomie.</p>
+    <div class="etat"><span class="pastille"></span> En service sur e-jàng &middot; catégorie Formation Professionnelle</div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>Pa SALL en images</h2>
+    <p class="intro">Un aperçu fidèle de l'expérience côté apprenant. Une pastille discrète, un panneau qui s'ouvre, des réponses situées dans le cours, et la voix pour ceux qui préfèrent écouter.</p>
+    <div class="galerie">
+
+      <div class="capture">
+        <div style="text-align:center;padding:22px 0 6px"><span class="lanceur"><span class="m"><svg viewBox="0 0 48 48" width="100%" height="100%"><circle cx="24" cy="26" r="16" fill="#A26B3F"/><path d="M8 22 Q10 8 24 8 Q38 8 40 22 L37 22 Q36 12 24 12 Q12 12 11 22 Z" fill="#1F4E79"/><rect x="10" y="20" width="28" height="4" rx="2" fill="#2E75B5"/><circle cx="18" cy="28" r="4.2" fill="none" stroke="#F2F4F7" stroke-width="1.6"/><circle cx="30" cy="28" r="4.2" fill="none" stroke="#F2F4F7" stroke-width="1.6"/><circle cx="18" cy="28" r="1.6" fill="#1C2530"/><circle cx="30" cy="28" r="1.6" fill="#1C2530"/><path d="M14 34 Q24 44 34 34 Q32 42 24 42 Q16 42 14 34 Z" fill="#F2F4F7"/></svg></span><b>Tuteur e-jàng</b></span></div>
+        <div class="legende">La pastille, présente en bas de chaque page.</div>
+      </div>
+
+      <div class="capture">
+        <div class="panneau">
+          <div class="p-entete"><span class="p-avatar"><svg viewBox="0 0 48 48" width="100%" height="100%"><circle cx="24" cy="26" r="16" fill="#A26B3F"/><path d="M8 22 Q10 8 24 8 Q38 8 40 22 L37 22 Q36 12 24 12 Q12 12 11 22 Z" fill="#1F4E79"/><rect x="10" y="20" width="28" height="4" rx="2" fill="#2E75B5"/><circle cx="18" cy="28" r="4.2" fill="none" stroke="#F2F4F7" stroke-width="1.6"/><circle cx="30" cy="28" r="4.2" fill="none" stroke="#F2F4F7" stroke-width="1.6"/><circle cx="18" cy="28" r="1.6" fill="#1C2530"/><circle cx="30" cy="28" r="1.6" fill="#1C2530"/><path d="M14 34 Q24 44 34 34 Q32 42 24 42 Q16 42 14 34 Z" fill="#F2F4F7"/></svg></span><span class="p-nom"><strong>Pa SALL</strong><span class="p-sous" style="display:block">Tuteur du cours</span></span><span class="p-fermer">&times;</span></div>
+          <div class="p-corps">
+            <div class="bulle bot"><strong>Bonjour.</strong> Je suis <strong>Pa SALL</strong>. Posez votre question en une phrase, ou touchez un sujet ci-dessous.</div>
+          </div>
+          <div class="puces"><span class="puce">Comment déposer un devoir&nbsp;?</span><span class="puce">Mot de passe oublié</span><span class="puce">Obtenir mon attestation</span></div>
+        </div>
+        <div class="legende">L'accueil, avec des sujets proposés.</div>
+      </div>
+
+      <div class="capture">
+        <div class="panneau">
+          <div class="p-corps">
+            <div class="bulle apprenant">comment déposer mon devoir&nbsp;?</div>
+            <div class="bulle bot">
+              <p>Ouvrez l'activité de type devoir, puis cliquez sur <strong>« Ajouter un travail »</strong>. Glissez votre fichier, vérifiez le format demandé, puis enregistrez : le statut « Remis pour évaluation » confirme le dépôt.</p>
+              <div class="situe"><b>Où :</b> activité de type devoir, bouton « Ajouter un travail »</div>
+              <span class="ecouter">Écouter</span>
+            </div>
+          </div>
+        </div>
+        <div class="legende">Une réponse validée, toujours située dans le cours.</div>
+      </div>
+
+      <div class="capture">
+        <div class="panneau">
+          <div class="p-corps">
+            <div class="bulle apprenant">comment structurer un document long&nbsp;?</div>
+            <div class="bulle bot">
+              <p>Je n'ai pas de fiche pour cette question, mais <strong>le cours en parle ici</strong> :</p>
+              <a class="passage"><span class="t">Livre du module : documents longs et sommaire</span><span class="x">Le sommaire automatique se construit à partir des styles de titre…</span></a>
+              <span class="ecouter">Écouter</span>
+            </div>
+          </div>
+        </div>
+        <div class="legende">Quand une fiche manque, il pointe le passage exact du cours.</div>
+      </div>
+
+      <div class="capture">
+        <div class="panneau">
+          <div class="p-corps">
+            <div class="bulle bot">
+              <p><strong>Votre question mérite le tuteur humain.</strong> Déposez-la dans le forum du cours ; le modèle ci-dessous est prêt à copier.</p>
+              <div class="actions"><span class="action">Copier le modèle</span><span class="action forum">Ouvrir le forum</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="legende">Quand il ne sait pas, il oriente, sans jamais inventer.</div>
+      </div>
+
+    </div>
+    <p class="note-fine">Les visuels ci-dessus sont des reconstitutions de l'interface. Ils ne contiennent aucune donnée réelle d'apprenant.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Ce qui le distingue</h2>
+    <p class="intro">Pa SALL n'a pas été conçu pour impressionner, mais pour servir, dans un contexte exigeant, avec des principes tenus.</p>
+    <div class="grille">
+      <div class="carte"><span class="ico">📶</span><h3>Frugal et hors connexion</h3><p>Pensé pour le téléphone et les réseaux modestes. Léger, il reste utile même quand la connexion faiblit.</p></div>
+      <div class="carte"><span class="ico">✅</span><h3>Fidèle, jamais inventif</h3><p>Il ne répond qu'à partir de contenus validés et du cours réel. Face à l'inconnu, il l'avoue et oriente.</p></div>
+      <div class="carte"><span class="ico">📝</span><h3>Respectueux des examens</h3><p>Il disparaît pendant les épreuves. Aucun risque qu'il souffle une réponse à un apprenant en test.</p></div>
+      <div class="carte"><span class="ico">🔊</span><h3>Accessible</h3><p>Lecture à voix haute de chaque réponse, navigation au clavier, respect des réglages de mouvement réduit.</p></div>
+      <div class="carte"><span class="ico">🔒</span><h3>Sans donnée personnelle</h3><p>Aucune donnée nominative n'est conservée. La confidentialité est un principe de conception, pas une option.</p></div>
+      <div class="carte"><span class="ico">📈</span><h3>Un rapport qui fait progresser</h3><p>Chaque semaine, les questions restées sans réponse deviennent la feuille de route des améliorations.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>Comment il aide, concrètement</h2>
+    <ul class="liste">
+      <li><strong>Assistance de la plateforme</strong> : se connecter, retrouver un cours, déposer un devoir, comprendre un badge ou une attestation.</li>
+      <li><strong>Contenu des cours</strong> : il retrouve le passage utile et renvoie directement vers l'activité concernée.</li>
+      <li><strong>Orientation vers l'humain</strong> : lorsqu'une réponse validée manque, il prépare la demande et guide vers le forum du cours.</li>
+      <li><strong>Écoute</strong> : chaque réponse peut être lue à voix haute, pour ceux qui lisent moins facilement.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Genèse</h2>
+    <p class="intro">Pa SALL est né au sein de la Direction des Curricula et de l'Innovation Pédagogique du ministère de la Formation professionnelle et technique du Sénégal, pour prolonger le dispositif de tutorat humain de la plateforme e-jàng et le rendre tenable à grande échelle. Il porte le nom d'un de ses artisans, en clin d'œil, et grandit au fil des questions réelles des apprenants.</p>
+    <p class="note-fine">Cette page présente le dispositif. Elle ne décrit volontairement ni son fonctionnement interne, ni son architecture technique.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div><strong>Pa SALL</strong> &middot; tuteur automatique d'e-jàng</div>
+    <div style="margin-top:6px">Direction des Curricula et de l'Innovation Pédagogique &middot; MEFPT, Sénégal</div>
+    <div style="margin-top:6px">Conception : Oumar SALL &middot; <a href="https://github.com/oumarsall3">github.com/oumarsall3</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
